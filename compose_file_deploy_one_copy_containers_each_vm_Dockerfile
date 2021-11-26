@@ -1,0 +1,8 @@
+FROM centos
+MAINTAINER docker_manager.jykim32.ops <root@docker_manager.jykim32.ops>
+
+RUN dnf -y install nginx
+RUN echo "Nginx on each VMs with docker" > /usr/share/nginx/html/index.html
+
+EXPOSE 80
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]

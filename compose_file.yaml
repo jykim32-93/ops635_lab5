@@ -1,0 +1,7 @@
+FROM centos 8
+MAINTAINER docker_manager.jykim32.ops
+
+RUN echo "Version 1" >> /var/www/html/index.html
+ADD ServerName docker_manager.jykim32.ops 
+
+EXPOSE 80

@@ -1,0 +1,134 @@
+ID                            HOSTNAME                     STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+s04zasbpoy2azlpj040irm6re *   docker_manager.jykim32.ops   Ready     Active         Leader           20.10.11
+if8npleup34d140kgjd4zgp2z     docker_vm1.jykim32.ops       Ready     Active                          20.10.11
+uinmxtoirmov0w4uyg35euhxu     docker_vm2.jykim32.ops       Ready     Active                          20.10.11
+v4i19111yey4o4sa56210qw1j     docker_vm3.jykim32.ops       Ready     Active                          20.10.11
+ID             NAME            MODE         REPLICAS   IMAGE                 PORTS
+ofw0cgnwa31r   swarm_cluster   replicated   4/4        nginx-server:latest   *:80->80/tcp
+[
+    {
+        "ID": "ofw0cgnwa31rnauuedtwdilfo",
+        "Version": {
+            "Index": 153
+        },
+        "CreatedAt": "2021-11-26T21:19:48.10276391Z",
+        "UpdatedAt": "2021-11-26T21:23:17.836658564Z",
+        "Spec": {
+            "Name": "swarm_cluster",
+            "Labels": {},
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "nginx-server:latest",
+                    "Init": false,
+                    "StopGracePeriod": 10000000000,
+                    "DNSConfig": {},
+                    "Isolation": "default"
+                },
+                "Resources": {
+                    "Limits": {},
+                    "Reservations": {}
+                },
+                "RestartPolicy": {
+                    "Condition": "any",
+                    "Delay": 5000000000,
+                    "MaxAttempts": 0
+                },
+                "Placement": {},
+                "ForceUpdate": 0,
+                "Runtime": "container"
+            },
+            "Mode": {
+                "Replicated": {
+                    "Replicas": 4
+                }
+            },
+            "UpdateConfig": {
+                "Parallelism": 1,
+                "FailureAction": "pause",
+                "Monitor": 5000000000,
+                "MaxFailureRatio": 0,
+                "Order": "stop-first"
+            },
+            "RollbackConfig": {
+                "Parallelism": 1,
+                "FailureAction": "pause",
+                "Monitor": 5000000000,
+                "MaxFailureRatio": 0,
+                "Order": "stop-first"
+            },
+            "EndpointSpec": {
+                "Mode": "vip",
+                "Ports": [
+                    {
+                        "Protocol": "tcp",
+                        "TargetPort": 80,
+                        "PublishedPort": 80,
+                        "PublishMode": "ingress"
+                    }
+                ]
+            }
+        },
+        "PreviousSpec": {
+            "Name": "swarm_cluster",
+            "Labels": {},
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "nginx-server:latest",
+                    "Init": false,
+                    "DNSConfig": {},
+                    "Isolation": "default"
+                },
+                "Resources": {
+                    "Limits": {},
+                    "Reservations": {}
+                },
+                "Placement": {},
+                "ForceUpdate": 0,
+                "Runtime": "container"
+            },
+            "Mode": {
+                "Replicated": {
+                    "Replicas": 2
+                }
+            },
+            "EndpointSpec": {
+                "Mode": "vip",
+                "Ports": [
+                    {
+                        "Protocol": "tcp",
+                        "TargetPort": 80,
+                        "PublishedPort": 80,
+                        "PublishMode": "ingress"
+                    }
+                ]
+            }
+        },
+        "Endpoint": {
+            "Spec": {
+                "Mode": "vip",
+                "Ports": [
+                    {
+                        "Protocol": "tcp",
+                        "TargetPort": 80,
+                        "PublishedPort": 80,
+                        "PublishMode": "ingress"
+                    }
+                ]
+            },
+            "Ports": [
+                {
+                    "Protocol": "tcp",
+                    "TargetPort": 80,
+                    "PublishedPort": 80,
+                    "PublishMode": "ingress"
+                }
+            ],
+            "VirtualIPs": [
+                {
+                    "NetworkID": "qaipj2vdne0xqbz2kqfowu1lz",
+                    "Addr": "10.0.0.6/24"
+                }
+            ]
+        }
+    }
+]
